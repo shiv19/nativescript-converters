@@ -46,7 +46,6 @@ export class HelloWorldModel extends Observable {
         if (/[a-z]/.test(password)) score++;
         if (/[A-Z]/.test(password)) score++;
         if (/[0-9]/.test(password)) score++;
-        if (/[0-9]/.test(password)) score++;
         if (/[!@#$%^&*()]/.test(password)) score++;
         score = password.length >= 6 ? score + 1 : 0;
 
@@ -64,8 +63,6 @@ export class HelloWorldModel extends Observable {
             case 4:
                 that.set('passwordClass', 'pass-strong'); return 'Strong';
             case 5:
-                that.set('passwordClass', 'pass-secure'); return 'Very Strong';
-            case 6:
                 that.set('passwordClass', 'pass-secure'); return 'You are the Boss';
         }
     };
@@ -74,5 +71,9 @@ export class HelloWorldModel extends Observable {
         super();
 
         that = this;
+    }
+
+    gotoMoreSample(args) {
+        args.object.page.frame.navigate('more-converters/more-converters-page');
     }
 }

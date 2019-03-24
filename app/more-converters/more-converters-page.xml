@@ -1,0 +1,46 @@
+<Page navigatingTo="navigatingTo" class="page" actionBarHidden="true">
+    <GridLayout rows="auto, auto, auto, *, auto, auto">
+        <Label row="0" text="NativeScripting" class="h1 text-center p-t-20"></Label>
+
+        <StackLayout row="1" class="form p-x-20"
+            visibility="{{ showSampleOne ? 'visible' : 'collapsed' }}">
+            <Label class="h2 p-y-5" text="To Uppercase!"></Label>
+            <TextField class="input input-border"
+                hint="Enter text" text="{{ userInput, userInput | toUpper }}" ></TextField>
+            <Label class="t-20" height="50" text="{{ userInput | toUpper }}"
+                textWrap="true"></Label>
+            <Button text="Check Input" tap="{{ checkInput }}"></Button>
+        </StackLayout>
+
+        <Label row="2" class="h2 p-x-20" text="Available Courses"
+            visibility="{{ !showSampleOne ? 'visible' : 'collapsed' }}"></Label>
+        <ListView row="3" items="{{ courses }}" class="p-t-10"
+            separatorColor="transparent"
+            visibility="{{ !showSampleOne ? 'visible' : 'collapsed' }}">
+            <ListView.itemTemplate>
+                <GridLayout rows="auto, auto, auto" columns="auto, *"  class="p-x-20 p-y-10">
+                    <Image row="0" rowSpan="3" col="0" height="50"
+                        verticalAlignment="top"
+                        src="{{ icon | imageUrl }}" class="m-r-20"></Image>
+                    <Label row="0" col="1" class="t-20" fontWeight="500"
+                        text="{{ name }}" textWrap="true"></Label>
+                    <Label row="1" col="1" class="t-20"
+                        text="{{ description }}" textWrap="true"></Label>
+                    <Label row="2" col="1" class="t-18 text-right m-t-5"      
+                        fontWeight="400"
+                        text="{{ author | toUppercase }}" textWrap="true"></Label>
+                    <Label row="2" col="1"
+                        backgroundColor="rgba(0,0,0,0.5)"
+                        color="white" borderRadius="100%" padding="5 10"
+                        verticalAlignment="center"
+                        class="pull-left m-l-10 m-t-5"
+                        text="{{ difficulty | courseDifficulty | toUppercase }}"></Label>
+                        <!-- Converters are chainable -->
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        <Button row="4" text="Toggle Sample" tap="{{ onSampleToggle }}" />
+        <Button row="5" text="Go Back" tap="{{ onGoBack }}" />
+
+    </GridLayout>
+</Page>

@@ -1,5 +1,11 @@
 import { getResources } from 'tns-core-modules/application';
 
+const difficultyMap = {
+  '1': 'Beginner',
+  '2': 'Intermediate',
+  '3': 'Advanced'
+}
+
 getResources().imageUrlConverter = (value) => {
   if (!value) return '';
 
@@ -35,3 +41,22 @@ getResources().dateConverter = {
       return result;
   }
 }
+
+getResources().toUppercase = (value) => {
+  if (!value) return;
+
+  return value.toUpperCase();
+}
+
+getResources().courseDifficulty = (value) => {
+  if (!value) return;
+
+  return difficultyMap[value];
+}
+
+getResources().imageUrl = (value) => {
+  if (!value) return;
+
+  return `~/imgs/${value}`;
+}
+

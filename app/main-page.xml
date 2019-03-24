@@ -1,33 +1,47 @@
 <Page navigatingTo="navigatingTo" class="page" actionBarHidden="true">
   <ScrollView>
-    <StackLayout class="p-20">
+    <StackLayout class="p-20 form">
       <Label text="Converters" class="h1 text-center"></Label>
 
       <Label class="hr-light m-t-10 m-b-10"></Label>
       <Label text="Local Converters" class="h2"></Label>
 
-      <Label class="t-20 m-t-10" fontWeight="bold" textWrap="true" text="Password Checker"></Label>
-      <TextField class="t-20" hint="Enter Password" secure="true" text="{{ password, password | encryptPassword }}"></TextField>
+      <Label class="t-20 m-t-10" fontWeight="bold" textWrap="true"
+        text="Password Checker"></Label>
+      <TextField class="t-20 input input-border" hint="Enter Password" secure="true"
+        text="{{ password, password | encryptPassword }}"></TextField>
       <Label class="t-18" textWrap="true">
         <FormattedString>
           <Span text="Pass Rating: "></Span>
           <Span class="{{ passwordClass }}" text="{{ password | passwordSecurityCheck }}"></Span>
         </FormattedString>
       </Label>
-      <Label class="t-18" textWrap="true" text="{{ 'Encrypted: ' + (password || '') }}"></Label>
+      <Label class="t-18" textWrap="true"
+        text="{{ 'Encrypted: ' + (password || '') }}"></Label>
 
       <Label class="hr-light m-t-10 m-b-10"></Label>
       <Label text="Global Converters" class="h2"></Label>
 
       <Label class="t-20 m-t-10 m-b-10" fontWeight="bold" textWrap="true" text="Image Url Converter"></Label>
-      <Label class="t-20" textWrap="true" text="{{ imageName | imageUrlConverter }}"></Label>
-      <Label class="t-20" textWrap="true" text="{{ 'picture2.png' | imageUrlConverter }}"></Label>
-      <Label class="t-20" textWrap="true" text="{{ 'picture3' | imageUrlConverterWithType('jpg') }}"></Label>
-      <Label class="t-20" textWrap="true" text="{{ anotherImage | imageUrlConverterWithType(imageType) }}"></Label>
+      <Label class="t-20" textWrap="true"
+        text="{{ imageName | imageUrlConverter }}"></Label>
+      <Label class="t-20" textWrap="true"
+        text="{{ 'picture2.png' | imageUrlConverter }}"></Label>
+      <Label class="t-20" textWrap="true"
+        text="{{ 'picture3' | imageUrlConverterWithType('jpg') }}"></Label>
+      <Label class="t-20" textWrap="true"
+        text="{{ anotherImage | imageUrlConverterWithType(imageType) }}"
+      ></Label>
       
-      <Label class="t-20 m-t-10" fontWeight="bold" textWrap="true" text="Date Converter"></Label>
+      <Label class="t-20 m-t-10" fontWeight="bold" textWrap="true"
+        text="Date Converter"></Label>
       <Label class="t-20" textWrap="true" text="{{ testDate }}"></Label>
-      <TextField class="t-20" text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}"></TextField>
+      <TextField class="t-20 input input-border"
+        text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}"
+      ></TextField>
+
+      <Button text="More Converters" tap="{{ gotoMoreSample }}" />
+
     </StackLayout>
   </ScrollView>
 </Page>
