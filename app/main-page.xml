@@ -1,0 +1,27 @@
+<Page navigatingTo="navigatingTo" class="page" actionBarHidden="true">
+  <StackLayout class="p-20">
+    <Label text="Converters" class="h1 text-center"></Label>
+
+    <Label class="hr-light m-t-10 m-b-10"></Label>
+    <Label text="Local Converters" class="h2"></Label>
+
+    <TextField hint="Enter Password" secure="true" text="{{ password, password | encryptPassword }}"></TextField>
+    <Label>
+      <FormattedString>
+        <Span text="Security Check: "></Span>
+        <Span class="{{ passwordClass }}" text="{{ password | passwordSecurityCheck }}"></Span>
+      </FormattedString>
+    </Label>
+    <Label text="{{ password }}"></Label>
+
+    <Label class="hr-light m-t-10 m-b-10"></Label>
+    <Label text="Global Converters" class="h2"></Label>
+
+    <Label text="{{ imageName | imageUrlConverter }}"></Label>
+    <Label text="{{ 'picture2.png' | imageUrlConverter }}"></Label>
+    <Label text="{{ 'picture3' | imageUrlConverterWithType('jpg') }}"></Label>
+    <Label text="{{ anotherImage | imageUrlConverterWithType(imageType) }}"></Label>
+    <TextField text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}"></TextField>
+    <Label text="{{ testDate }}"></Label>
+  </StackLayout>
+</Page>
