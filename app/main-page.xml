@@ -26,8 +26,8 @@
       <Label class="t-20" textWrap="true" text="{{ anotherImage | imageUrlConverterWithType(imageType) }}"></Label>
       
       <Label class="t-20 m-t-10" fontWeight="bold" textWrap="true" text="Date Converter"></Label>
-      <TextField class="t-20" text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}"></TextField>
       <Label class="t-20" textWrap="true" text="{{ testDate }}"></Label>
+      <TextField class="t-20" text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}"></TextField>
     </StackLayout>
   </ScrollView>
 </Page>
