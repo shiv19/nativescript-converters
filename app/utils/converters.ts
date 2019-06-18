@@ -43,19 +43,19 @@ getResources().dateConverter = {
 }
 
 getResources().toUppercase = (value) => {
-  if (!value) return;
+  if (typeof value === 'undefined') return;
 
   return value.toUpperCase();
 }
 
 getResources().courseDifficulty = (value) => {
-  if (!value) return;
+  if (typeof value === 'undefined') return;
 
   return difficultyMap[value];
 }
 
 getResources().imageUrl = (value) => {
-  if (!value) return;
+  if (typeof value === 'undefined') return;
 
   return `~/imgs/${value}`;
 }
