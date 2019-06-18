@@ -7,12 +7,12 @@ export class MoreConvertersModel extends Observable {
 
   toUpper = {
     toView(value) {
-      if (!value) return;
+      if (typeof value === 'undefined') return;
 
       return value.toUpperCase();
     },
     toModel(value) {
-      if (!value) return;
+      if (typeof value === 'undefined') return;
 
       return value.toLowerCase();
     }
